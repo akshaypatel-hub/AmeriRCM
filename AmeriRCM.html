@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevenueCare Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            color: #FF6347;
+            transition: color 0.3s ease;
+        }
+        header h1:hover {
+            color: #FF4500;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #FF6347;
+        }
+        .hero {
+            background-color;black;
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: #e0e0e0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+        .hero h1:hover {
+            transform: scale(1.05);
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            max-width: 600px;
+        }
+        .content {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content h2 {
+            text-align: center;
+            color: #FF6347;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            transition: color 0.3s ease;
+        }
+        .content h2:hover {
+            color: #FF4500;
+        }
+        .services, .process {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .service, .process-step {
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            padding: 20px;
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover, .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .service h3, .process-step h3 {
+            color: #FF6347;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+        .service h3:hover, .process-step h3:hover {
+            color: #FF4500;
+        }
+        .service p, .process-step p {
+            color: #b0b0b0;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #333;
+            color: #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #FF6347;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: #FF6347;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        .contact-form button:hover {
+            background-color: #FF4500;
+            transform: translateY(-3px);
+        }
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        
+        
+        .founders {
+    text-align: center;
+    margin-top: 40px;
+}
+.founder {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.founder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.founder h4 {
+    color: #FF6347;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+.founder h4:hover {
+    color: #FF4500;
+}
+.founder p {
+    color: #b0b0b0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RevenueCare Solutions</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>RevenueCare Solutions</h1>
+        <p>Maximizing your revenue with efficient RCM solutions</p>
+    </div>
+    <div class="content">
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Charge Posting</h3>
+                    <p>Accurate and timely posting of charges to ensure maximum reimbursement.</p>
+                </div>
+                <div class="service">
+                    <h3>Payment Posting</h3>
+                    <p>Comprehensive payment posting services to streamline your revenue cycle.</p>
+                </div>
+                <div class="service">
+                    <h3>Denial Management</h3>
+                    <p>Effective management of denials to reduce revenue loss and improve cash flow.</p>
+                </div>
+                <div class="service">
+                    <h3>Patient Billing</h3>
+                    <p>Efficient patient billing services to ensure prompt payments and patient satisfaction.</p>
+                </div>
+            </div>
+        </section>
+        <section id="process">
+            <h2>Our Process</h2>
+            <div class="process">
+                <div class="process-step">
+                    <h3>1. Patient Registration</h3>
+                    <p>Collecting patient demographics and insurance information accurately.</p>
+                </div>
+                <div class="process-step">
+                    <h3>2. Insurance Verification</h3>
+                    <p>Verifying insurance coverage to ensure services are covered.</p>
+                </div>
+                <div class="process-step">
+                    <h3>3. Charge Capture</h3>
+                    <p>Recording services provided to the patient for billing.</p>
+                </div>
+                <div class="process-step">
+                    <h3>4. Claim Submission</h3>
+                    <p>Submitting claims to insurance companies in a timely manner.</p>
+                </div>
+                <div class="process-step">
+                    <h3>5. Payment Posting</h3>
+                    <p>Posting payments received from insurers and patients accurately.</p>
+                </div>
+                <div class="process-step">
+                    <h3>6. Denial Management</h3>
+                    <p>Addressing and correcting denied claims to recover lost revenue.</p>
+                </div>
+                <div class="process-step">
+                    <h3>7. Patient Billing</h3>
+                    <p>Sending bills to patients and following up on unpaid balances.</p>
+                </div>
+                <div class="process-step">
+                    <h3>8. Reporting</h3>
+                    <p>Providing detailed reports to track performance and identify areas for improvement.</p>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At RevenueCare Solutions, we are dedicated to providing top-notch RCM services to healthcare providers. Our experienced team works diligently to optimize your revenue cycle, ensuring that you receive the maximum reimbursement for your services. With a focus on accuracy, efficiency, and transparency, we are committed to enhancing the financial performance of your practice.</p>
+            <div class="founders">
+                <h3>Founders</h3>
+                <div class="founder">
+                    <h4>Akshay Patel</h4>
+                    <p>Akshay brings over 4 years of experience in charge posting and payment posting. His expertise in the medical billing industry ensures that our clients receive the highest level of service and support.</p>
+                </div>
+                <div class="founder">
+                    <h4>Satish Vaniya</h4>
+                    <p>Satish co-founded RevenueCare Solutions with a vision to streamline the revenue cycle management process for healthcare providers. His strategic approach and dedication to excellence drive the success of our clients.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" onclick="submitForm()">Send</button>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 RevenueCare Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        function submitForm() {
+            // Simulate form submission
+            alert('Form submitted!');
+        }
+    </script>
+</body>
+</html>
